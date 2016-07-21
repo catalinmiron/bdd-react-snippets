@@ -1,13 +1,12 @@
 {
   "name": "bdd-react-snippets",
-  "theme": "syntax",
-  "version": "0.0.0",
-  "description": "A short description of your syntax theme",
+  "version": "0.1.0",
+  "description": "BDD React snippets for TestBuffet",
   "keywords": [
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/atom/bdd-react-snippets",
+  "repository": "https://github.com/catalinmiron/bdd-react-snippets",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
