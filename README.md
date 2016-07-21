@@ -1,9 +1,10 @@
 ## Commands
 
+![bdd-react-snippets](https://cloud.githubusercontent.com/assets/2805320/17020921/03b0bb5c-4f4d-11e6-81fd-7fe6f3dbdee0.gif)
+
 - `its`
 - `renderjs`
 - `childrenjs`
 - `childjs`
 - `callbackjs`
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
