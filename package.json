@@ -3,8 +3,10 @@
   "version": "0.3.0",
   "description": "BDD React snippets for TestBuffet",
   "keywords": [
-    "syntax",
-    "theme"
+    "React",
+    "BDD",
+    "Mocha",
+    "snippets"
   ],
   "repository": "https://github.com/catalinmiron/bdd-react-snippets",
   "license": "MIT",
