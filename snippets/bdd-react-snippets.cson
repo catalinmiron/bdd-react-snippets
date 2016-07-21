@@ -1,0 +1,96 @@
+'.source.js':
+  'it(should ...)':
+    'prefix': 'its'
+    'body': "it('should ${1:nameIt}', function() {\n\t ${2:expect}\n});\n"
+  'Callbacks skeleton':
+    'prefix': 'callbackjs'
+    'body': '''
+    var Component = require('/components/${1:component_name}.jsx'),
+        fixture = require('${2:fixture_name}');
+
+
+    describe('${3:ComponentName}', function() {
+      describe('${4:Callbacks}', function() {
+        var component;
+
+        beforeEach(function() {
+          TestHelpers.stubMethod(Component, 'render', null);
+          component = TestHelpers.render(Component, fixture, this.container);
+        });
+
+        it('${5:description}', function() {
+          ${0:// body...}
+        });
+      });
+    });
+    '''
+  'Child skeleton':
+    'prefix': 'childjs'
+    'body': '''
+    describe('${1:child_name}', function() {
+      var props;
+
+      beforeEach(function() {
+        props = TestHelpers.getChildProps(component, '${1:child_name}');
+      });
+
+      it('${2:description}', function() {
+        ${0:// body...}
+      });
+    });
+    '''
+  'Children skeleton':
+    'prefix': 'childrenjs'
+    'body': '''
+    var Component = require('/components/${1:component_name}.jsx'),
+        fixture = require('${2:fixture_name}');
+
+
+    describe('${3:ComponentName}', function() {
+      describe('${4:Children}', function() {
+        var component;
+
+        beforeEach(function() {
+          TestHelpers.stubMethod(Component, 'render', null);
+          component = TestHelpers.render(Component, fixture, this.container);
+        });
+
+        describe('${5:child_name}', function() {
+          var props;
+
+          beforeEach(function() {
+            props = TestHelpers.getChildProps(component, '${5:child_name}');
+          });
+
+          it('${6:description}', function() {
+            ${0:// body...}
+          });
+        });
+      });
+    });
+    '''
+  'Render skeleton':
+    'prefix': 'renderjs'
+    'body': '''
+    var Component = require('/components/${1:component_name}.jsx'),
+        fixture = require('${2:fixture_name}');
+
+    var \$ = require('jquery');
+
+
+    describe('${3:ComponentName}', function() {
+      describe('${4:Render}', function() {
+        var component, \$component, loadChildStub;
+
+        beforeEach(function() {
+          loadChildStub = TestHelpers.stubMethod(Component, 'loadChild', null);
+          component = TestHelpers.render(Component, fixture, this.container);
+          \$component = \$(component.getDOMNode());
+        });
+
+        it('${5:description}', function() {
+          ${0:// body...}
+        });
+      });
+    });
+    '''
