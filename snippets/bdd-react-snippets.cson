@@ -1,7 +1,11 @@
 '.source.js':
   'it(should ...)':
     'prefix': 'its'
-    'body': "it('should ${1:nameIt}', function() {\n\t ${2:expect}\n});\n"
+    'body': '''
+    it('should ${1:nameIt}', function() {
+      ${2:expect};
+    });
+    '''
   'Callbacks skeleton':
     'prefix': 'callbackjs'
     'body': '''
