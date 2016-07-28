@@ -8,4 +8,8 @@
 - `childrenjs`
 - `childjs`
 - `callbackjs`
-
+- `its6`
+- `renderjs6`
+- `childrenjs6`
+- `childjs6`
+- `callbackjs6`

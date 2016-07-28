@@ -28,6 +28,35 @@
       });
     });
     '''
+  'Callbacks skeleton ES6':
+    'prefix': 'callbackjs6'
+    'body': '''
+    import Component from '/components/${1:component_name}.jsx';
+    import fixture from '${2:fixture_name}';
+
+
+    describe('${3:ComponentName}', () => {
+      describe('${4:Callbacks}', () => {
+        let component;
+
+        beforeEach(function() {
+          TestHelpers.stubMethod(Component, 'render', null);
+          component = TestHelpers.render(Component, fixture, this.container);
+        });
+
+        it('${5:description}', () => {
+          ${0:// body...}
+        });
+      });
+    });
+    '''
+  'it(should ...) ES6':
+    'prefix': 'its6'
+    'body': '''
+    it('should ${1:nameIt}', () => {
+      ${2:expect()};
+    });
+    '''
   'Child skeleton':
     'prefix': 'childjs'
     'body': '''
@@ -39,6 +68,21 @@
       });
 
       it('${2:description}', function() {
+        ${0:// body...}
+      });
+    });
+    '''
+  'Child skeleton ES6':
+    'prefix': 'childjs6'
+    'body': '''
+    describe('${1:child_name}', () => {
+      let props;
+
+      beforeEach(() => {
+        props = TestHelpers.getChildProps(component, '${1:child_name}');
+      });
+
+      it('${2:description}', () => {
         ${0:// body...}
       });
     });
@@ -73,6 +117,36 @@
       });
     });
     '''
+  'Children skeleton ES6':
+    'prefix': 'childrenjs6'
+    'body': '''
+    import Component from '/components/${1:component_name}.jsx';
+    import fixture from '${2:fixture_name}';
+
+
+    describe('${3:ComponentName}', () => {
+      describe('${4:Children}', () => {
+        let component;
+
+        beforeEach(function() {
+          TestHelpers.stubMethod(Component, 'render', null);
+          component = TestHelpers.render(Component, fixture, this.container);
+        });
+
+        describe('${5:child_name}', () => {
+          let props;
+
+          beforeEach(() => {
+            props = TestHelpers.getChildProps(component, '${5:child_name}');
+          });
+
+          it('${6:description}', () => {
+            ${0:// body...}
+          });
+        });
+      });
+    });
+    '''  
   'Render skeleton':
     'prefix': 'renderjs'
     'body': '''
@@ -93,6 +167,31 @@
         });
 
         it('${5:description}', function() {
+          ${0:// body...}
+        });
+      });
+    });
+    '''
+  'Render skeleton ES6':
+    'prefix': 'renderjs6'
+    'body': '''
+    import Component from '/components/${1:component_name}.jsx';
+    import fixture from '${2:fixture_name}';
+
+    import \$ from 'jquery';
+
+
+    describe('${3:ComponentName}', () => {
+      describe('${4:Render}', () => {
+        let component, \$component, loadChildStub;
+
+        beforeEach(function() {
+          loadChildStub = TestHelpers.stubMethod(Component, 'loadChild', null);
+          component = TestHelpers.render(Component, fixture, this.container);
+          \$component = \$(component.getDOMNode());
+        });
+
+        it('${5:description}', () => {
           ${0:// body...}
         });
       });
