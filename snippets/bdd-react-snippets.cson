@@ -31,7 +31,7 @@
   'Callbacks skeleton ES6':
     'prefix': 'callbackjs6'
     'body': '''
-    import Component from '/components/${1:component_name}.jsx';
+    import Component from 'components/${1:component_name}.jsx';
     import fixture from '${2:fixture_name}';
 
 
@@ -120,7 +120,7 @@
   'Children skeleton ES6':
     'prefix': 'childrenjs6'
     'body': '''
-    import Component from '/components/${1:component_name}.jsx';
+    import Component from 'components/${1:component_name}.jsx';
     import fixture from '${2:fixture_name}';
 
 
@@ -146,7 +146,7 @@
         });
       });
     });
-    '''  
+    '''
   'Render skeleton':
     'prefix': 'renderjs'
     'body': '''
@@ -175,7 +175,7 @@
   'Render skeleton ES6':
     'prefix': 'renderjs6'
     'body': '''
-    import Component from '/components/${1:component_name}.jsx';
+    import Component from 'components/${1:component_name}.jsx';
     import fixture from '${2:fixture_name}';
 
     import \$ from 'jquery';
