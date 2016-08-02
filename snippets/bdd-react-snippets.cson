@@ -9,7 +9,7 @@
   'Callbacks skeleton':
     'prefix': 'callbackjs'
     'body': '''
-    var Component = require('/components/${1:component_name}.jsx'),
+    var Component = require('components/${1:component_name}.jsx'),
         fixture = require('${2:fixture_name}');
 
 
@@ -90,7 +90,7 @@
   'Children skeleton':
     'prefix': 'childrenjs'
     'body': '''
-    var Component = require('/components/${1:component_name}.jsx'),
+    var Component = require('components/${1:component_name}.jsx'),
         fixture = require('${2:fixture_name}');
 
 
@@ -150,7 +150,7 @@
   'Render skeleton':
     'prefix': 'renderjs'
     'body': '''
-    var Component = require('/components/${1:component_name}.jsx'),
+    var Component = require('components/${1:component_name}.jsx'),
         fixture = require('${2:fixture_name}');
 
     var \$ = require('jquery');
@@ -178,6 +178,7 @@
     import Component from 'components/${1:component_name}.jsx';
     import fixture from '${2:fixture_name}';
 
+    import React from 'react';
     import \$ from 'jquery';
 
 
@@ -188,7 +189,7 @@
         beforeEach(function() {
           loadChildStub = TestHelpers.stubMethod(Component, 'loadChild', null);
           component = TestHelpers.render(Component, fixture, this.container);
-          \$component = \$(component.getDOMNode());
+          \$component = \$(React.findDOMNode(component));
         });
 
         it('${5:description}', () => {
